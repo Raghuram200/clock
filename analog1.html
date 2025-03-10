@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 300px;
+            padding: 60px;
+            background-color: darkblue;
+
+        }
+
+        .box {
+            width: 440px;
+            height: 450px;
+            border: 20px solid darkslategray;
+            border-radius: 50%;
+            position: relative;
+            font-size: 23px;
+            text-transform: uppercase;
+            font-weight: bolder;
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 40px black;
+
+
+
+
+        }
+
+        .point {
+            width: 20px;
+            height: 20px;
+            background-color: goldenrod;
+            border-radius: 50px;
+            position: absolute;
+            left: 214px;
+            top: 210px;
+            z-index: 1;
+        }
+
+        .hr {
+            position: absolute;
+            left: 330px;
+            top: 40px;
+        }
+
+        .hr2 {
+            position: absolute;
+            left: 370px;
+            top: 100px;
+        }
+
+        .hr3 {
+            position: absolute;
+            left: 390px;
+            top: 190px;
+        }
+
+        .hr4 {
+            position: absolute;
+            left: 380px;
+            top: 280px;
+        }
+
+        .hr5 {
+            position: absolute;
+            left: 320px;
+            top: 360px;
+        }
+
+        .hr6 {
+            position: absolute;
+            left: 230px;
+            top: 390px;
+        }
+
+        .hr7 {
+            position: absolute;
+            right: 310px;
+            top: 360px;
+        }
+
+        .hr8 {
+            position: absolute;
+            right: 390px;
+            top: 270px;
+        }
+
+        .hr9 {
+            position: absolute;
+            right: 390px;
+            top: 190px;
+        }
+
+        .hr10 {
+            position: absolute;
+            right: 360px;
+            top: 110px;
+        }
+
+        .hr11 {
+            position: absolute;
+            right: 320px;
+            top: 40px;
+        }
+
+        .hr12 {
+            position: absolute;
+            left: 210px;
+            top: 10px;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            background: white;
+        }
+        .hour {
+            width: 10px;
+            height: 120px;
+            background-color:deepskyblue;
+        }
+        .minute {
+            width: 8px;
+            height: 150px;
+            background-color: lawngreen;
+        }
+        .second {
+            width: 4px;
+            height: 180px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-transform: capitalize;font-weight: bolder;font-size: xx-large;font-style: italic;color: cyan; text-decoration: underline;">analog clock</h1>
+
+    <div class="box">
+       <h6 style="position: relative;left: 190px; top: 37px;"> raghuram</h6>       
+        <div class="point"></div>
+
+        <div class="hr">1</div>
+        <div class="hr2">2</div>
+        <div class="hr3" style="text-shadow: 0 0 10px white,0 0 20px white;font-size: 37px;">3</div>
+        <div class="hr4">4</div>
+        <div class="hr5">5</div>
+        <div class="hr6" style="text-shadow: 0 0 10px white,0 0 20px white; font-size: 37px;">6</div>
+        <div class="hr7">7</div>
+        <div class="hr8">8</div>
+        <div class="hr9" style="text-shadow: 0 0 10px white,0 0 20px white; font-size: 37px;">9</div>
+        <div class="hr10">10</div>
+        <div class="hr11">11</div>
+        <div class="hr12" style="text-shadow: 0 0 10px white,0 0 20px white;font-size: 37px;">12</div>
+        <div class="clock">
+            <div class="hand hour" id="hour"></div>
+            <div class="hand minute" id="minute"></div>
+            <div class="hand second" id="second"></div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // var h = 0
+        // var m = 0
+        // var s = 0
+        // var d = 0
+        setInterval(
+            function clock() {
+               var d = new Date()
+                var h = d.getHours() * 30 + Math.round(m /120)// 
+                var m = d.getMinutes() * 6//
+                var s = d.getSeconds() * 6//
+                document.getElementById("second").style.transform = "rotate(" + s + "deg)"
+                document.getElementById("hour").style.transform = "rotate(" + h + "deg)"
+                document.getElementById("minute").style.transform = "rotate(" + m + "deg)"
+
+            }
+        ), 1000
+        
+    </script>
+
+</body>
+
+</html>
